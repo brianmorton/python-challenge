@@ -11,8 +11,10 @@ budget_data = open(path,'r')
 #reader call and seperate file by comma
 reader = csv.reader(budget_data, delimiter=',')
 
-#csv header skip
+#csv header print and skip
 csv_header = next(reader)
+print(f"CSV Header: {csv_header}")
+
 #for loop thru file
 for row in reader:
    # print statement of file to see if working
