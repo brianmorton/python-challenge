@@ -1,6 +1,7 @@
 #module imports
 import os
 import csv
+import shutil
 
 #variables
 months = 0
@@ -58,15 +59,19 @@ print('Greatest amount of profit was ' + (str)(greatcomp) + ' in ' + (greatmonth
 print('Greatest loss of profit was ' + (str)(lesscomp) + ' in ' + (lessmonth))
 
 #Export results to txt file
+analysispath = 'C:/Users/Brian Morton.000/Desktop/school stuff/pythonhw/python-challenge/PyBank/Resources/Analysis/analysis.txt'
+currentpath = 'C:/Users/Brian Morton.000/upenn-phi-data-pt-12-2020-u-c/analysis.txt'
+analysis = "analysis.txt"
+#os.path.join(path,file_name)
+    
+#adding above print statements as writes
+analysisw = open(analysis, "w")
+analysisw.write('Total # of months: ' + (str)(months))
+analysisw.write('Total Profit/Loss:$ ' + (str)(total))
+analysisw.write('Average of Profit/Loss:$ ' + (str)(average))
+analysisw.write('Greatest amount of profit was ' + (str)(greatcomp) + ' in ' + (greatmonth))
+analysisw.write('Greatest loss of profit was ' + (str)(lesscomp) + ' in ' + (lessmonth))
 
+#move file
+os.rename(currentpath, analysispath)
 
-
-
-
-
-#print(f"CSV Header: {csv_header}")
-
-
-#workaround solution for windows
-#if using \ use command
-# .replace("\","/") at end of line
