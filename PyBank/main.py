@@ -30,9 +30,15 @@ for row in reader:
    months = (months) + 1
 
    # pull values to rowadd value
-   rowadd = row[1]
+   rowadd = int(row[1])
    #add rowvalue to list
    totallist.append(rowadd)
+
+#greatest month if statement
+
+
+#lowest month if statment
+
   
 total = sum(totallist)
   #Print total months
@@ -40,8 +46,8 @@ print('Total # of months: ' + (str)(months))
   #Print Profit/loss total
 print('Total Profit/Loss:$ ' + (str)(total))
 #Average Profit/Loss
-#average = Sum/len(totallist)
-#print('Average of Profit/Loss:$ ' (str)average)
+average = (total)/(months)
+print('Average of Profit/Loss:$ ' + (str)(average))
 
 
 
