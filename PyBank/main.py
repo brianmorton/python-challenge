@@ -6,6 +6,8 @@ import csv
 months = 0
 rowadd = 0
 totallist = []
+greatcomp = 0
+lesscomp = 0
 
 
 
@@ -20,7 +22,7 @@ reader = csv.reader(budget_data, delimiter=',')
 
 #csv header print and skip
 csv_header = next(reader)
-print(f"CSV Header: {csv_header}")
+
 
 
 
@@ -33,13 +35,15 @@ for row in reader:
    rowadd = int(row[1])
    #add rowvalue to list
    totallist.append(rowadd)
+    #greatest month if statement
+   if (int(row[1]) >= greatcomp):
+    greatcomp = int(row[1])
+    greatmonth = row[0]
+    #lowest month if statment
+   if (int(row[1]) <= lesscomp):
+    lesscomp = int(row[1])
+    lessmonth = row[0]
 
-#greatest month if statement
-
-
-#lowest month if statment
-
-  
 total = sum(totallist)
   #Print total months
 print('Total # of months: ' + (str)(months))
@@ -48,7 +52,19 @@ print('Total Profit/Loss:$ ' + (str)(total))
 #Average Profit/Loss
 average = (total)/(months)
 print('Average of Profit/Loss:$ ' + (str)(average))
+#Greatest amt print statment
+print('Greatest amount of profit was ' + (str)(greatcomp) + ' in ' + (greatmonth))
+#Greatest loss print statment
+print('Greatest loss of profit was ' + (str)(lesscomp) + ' in ' + (lessmonth))
 
+#Export results to txt file
+
+
+
+
+
+
+#print(f"CSV Header: {csv_header}")
 
 
 #workaround solution for windows
